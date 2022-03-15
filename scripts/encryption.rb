@@ -1,0 +1,3 @@
+
+
+BCrypt::Password.create(secret)
