@@ -13,20 +13,14 @@
   <p>
     <% if @current_user %>
       Welcome!
+      |
+      <a href="/">Home</a>
       <%= button_to "Logout","/sessions/logout", method: :delete %>
       <%else%>
       <a href="/sessions/new">Login</a>
       |
       <a href="/users/new">Signup</a>
       <%end%>
-    </p>
-
-    <p>
-      <a href="/">Home</a>
-      |
-      <a href="/sessions/new">Login</a>
-      |
-      <a href="/users/new">Signup</a>
     </p>
 
     <%= yield %>
