@@ -12,7 +12,7 @@
   <body>
   <p>
     <% if @current_user %>
-      Welcome!
+      Welcome <%=@current_user.username%>!
       |
       <a href="/">Home</a>
       <%= button_to "Logout","/sessions/logout", method: :delete %>
@@ -21,6 +21,10 @@
       |
       <a href="/users/new">Signup</a>
       <%end%>
+    </p>
+
+    <p>
+    <%= flash[:notice]%>
     </p>
 
     <%= yield %>
