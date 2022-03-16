@@ -13,30 +13,30 @@
 <ul class="nav">
 <% if @current_user %>
     <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#">
+    <a class="nav-link active pt-2" aria-current="page" href="#">
       Welcome <%=@current_user.username%>!</a>
     </li>
      <li class="nav-item">
-    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link pt-2" href="/">Home</a>
     </li>
 
-     <li class="nav-item"> <%= button_to "Logout", "/sessions/logout", method: :delete, class: "nav-link" %></li>
+     <li class="nav-item pt-2"> <%= button_to "Logout", "/sessions/logout", method: :delete, class: "nav-link" %></li>
     </li>
   <%else%>
  
    <li class="nav-item">
-    <a class="nav-link" href="/sessions/new">Login</a>
+    <a class="nav-link pt-2" href="/sessions/new">Login</a>
     </li>
   <li class="nav-item">
-    <a class="nav-link" href="/users/new">Sign Up</a>
+    <a class="nav-link pt-2" href="/users/new">Sign Up</a>
     </li>
 </ul>
  <%end%>
 
 <div class="container">
-    
+    <p>
     <%= flash[:notice]%>
-      </p>
+    </p>
 
     <%= yield %>
  </div>
