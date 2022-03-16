@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(params["user"])
     @user.password = BCrypt::Password.create(params["user"]["password"])
     @user.save
-    #redirect_to "/users/#(@user.id)"
+    flash[:notice] = "Now Let's Get You Logged In!"
+    redirect_to "/sessions/new"
   end
 end
