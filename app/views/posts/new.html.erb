@@ -13,8 +13,16 @@
     <%= form.label "posted_on" %>
     <%= form.date_field "posted_on" %>
   </p>
+
+ <div class="mb-3">
+  <%= form.label "uploaded_image", class:"form-label"%>
+  <%= form.file_field "uploaded_image", accept:"image/jpg, image/jpeg, image /png", class:"form-control"%>
+</div>
+
+ 
   <p>
     <button class="btn btn-success py-2">Create Post</button>
   </p>
   <%= form.hidden_field "place_id" %>
+
 <% end %>
