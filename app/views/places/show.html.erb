@@ -8,9 +8,19 @@
   <h3><%= post.title %></h3>
   <h4><%= post.posted_on %></h4>
   <p><%= post.description %></p>
+  <% if post.uploaded_image.attached?%>
+  <img src="<%= url_for(post.uploaded_image)%>" class="img-fluid">
+
+  <%else%>
+
+  <img src="<%= post.uploaded_image%>"class="img-fluid"
+
+<%end%>
+  
 </div>
 <% end %>
 </div> 
+
 <p>
   <a href="/posts/new?place_id=<%= @place.id %>" class="btn btn-primary">New Post</a>
 </p>
